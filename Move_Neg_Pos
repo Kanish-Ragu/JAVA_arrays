@@ -1,0 +1,36 @@
+class Solution {
+    public void segregateElements(int[] arr) {
+         int []temp=new int[arr.length];
+        int s=0;
+        int count=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<0)
+            {
+                count++;
+            }
+        }
+        int e=arr.length-count;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            int curr=arr[i];
+            if(curr>=0)
+            {
+                temp[s]=curr;
+                s++;
+            }
+            else
+            {
+                temp[e]=curr;
+                e++;
+            }
+        }
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=temp[i];
+        }
+        // Your code goes here
+    }
+}
