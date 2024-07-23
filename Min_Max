@@ -1,0 +1,25 @@
+class Solution {
+    public Pair<Long, Long> getMinMax(int[] arr) {
+        
+        int a=0;
+        int b=arr[0];
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>a)
+            {
+                a=arr[i];
+            }
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<b)
+            {
+                b=arr[i];
+            }
+        }
+        Pair p=new Pair(b,a);
+        return p;
+        
+        // Code Here
+    }
+}
