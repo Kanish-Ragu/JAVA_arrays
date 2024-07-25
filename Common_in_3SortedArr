@@ -1,0 +1,68 @@
+If arguments are List type:
+class Solution {
+    // Function to find common elements in three arrays.
+    public List<Integer> commonElements(List<Integer> A, List<Integer> B,
+                                        List<Integer> C) {
+        // Code Here
+         Set<Integer> S1=new LinkedHashSet<>();
+        Set<Integer> S2=new  LinkedHashSet<>();
+        Set<Integer> S3=new  LinkedHashSet<>();
+        
+        for(int i=0;i<A.size();i++)
+        {
+            
+            if(!S1.contains(A.get(i)))
+            
+                S1.add(A.get(i));
+            
+        }
+        for(int i=0;i<B.size();i++)
+        {
+            if(S1.contains(B.get(i)))
+            
+                S2.add(B.get(i));
+            
+        }
+        for(int i=0;i<C.size();i++)
+        {
+            if(S2.contains(C.get(i)))
+            
+                S3.add(C.get(i));
+            
+        }
+        
+        return new ArrayList<>(S3);
+    }
+}
+
+//If arguments are list types:
+ public List<Integer> commonElements(int arr1[], int arr2[],
+                                       int arr3[]) {
+        // Code Here
+       ArrayList<Integer> al=new ArrayList<>();
+       int a=0,b=0,c=0;
+       while(a<aar1.length && b<arr2.length && c<arr3.length)
+       {
+           if(arr1[a]==arr2[b] && arr2[b]==arr3[c])
+           {
+               if(!al.contains(arr1[a]))
+               {
+                   al.add(arr1[a]);
+               }
+               a++;
+               b++;
+               c++;
+           }
+           else if(arr1[a]<arr2[b])
+           {
+               a++;
+           }
+           else if(arr2[b]<arr3[c])
+           {
+               b++;
+           }
+           else{
+               c++;
+           }
+       }return al;
+    }
