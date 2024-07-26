@@ -1,0 +1,35 @@
+IMPORTANT HASH MAP QUESTION 
+
+class Solution
+{
+    //Function to count subarrays with 1s and 0s.
+    static int countSubarrWithEqualZeroAndOne(int arr[], int n)
+    {
+        // add your code here
+        HashMap<Integer,Integer> h=new HashMap<>();
+        h.put(0,1);
+        int ans=0;
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]==0)
+            {
+                sum+=-1;
+            }
+            else
+            {
+                sum+=+1;
+            }
+            if(h.containsKey(sum))
+            {
+                ans=ans+h.get(sum);
+                h.put(sum,h.getOrDefault(sum,0)+1);
+            }
+            else
+            {
+                h.put(sum,1);
+            }
+        }return ans;
+        
+    }
+}
